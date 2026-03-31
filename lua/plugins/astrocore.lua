@@ -40,7 +40,7 @@ return {
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
-        relativenumber = true, -- sets vim.opt.relativenumber
+        relativenumber = false, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
@@ -79,6 +79,26 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+        -- Better window navigation
+        ["<C-h>"] = { "<C-w>h", desc = "Move to left window" },
+        ["<C-j>"] = { "<C-w>j", desc = "Move to window below" },
+        ["<C-k>"] = { "<C-w>k", desc = "Move to window above" },
+        ["<C-l>"] = { "<C-w>l", desc = "Move to right window" },
+
+        -- Quick save
+        ["<C-s>"] = { ":w<CR>", desc = "Save file" },
+
+        -- Better search navigation
+        n = { "nzzzv", desc = "Next search result" },
+        N = { "Nzzzv", desc = "Previous search result" },
+      },
+      -- Terminal mode mappings
+      t = {
+        -- Window navigation from terminal
+        ["<C-h>"] = { "<C-\\><C-n><C-w>h", desc = "Move to left window" },
+        ["<C-j>"] = { "<C-\\><C-n><C-w>j", desc = "Move to window below" },
+        ["<C-k>"] = { "<C-\\><C-n><C-w>k", desc = "Move to window above" },
+        ["<C-l>"] = { "<C-\\><C-n><C-w>l", desc = "Move to right window" },
       },
     },
   },

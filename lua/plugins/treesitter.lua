@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Customize Treesitter
 -- --------------------
@@ -17,7 +17,41 @@ return {
       ensure_installed = {
         "lua",
         "vim",
+        "vimdoc",
+        "bash",
+        "regex",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "rust",
+        "toml",
+        "go",
+        "gomod",
+        "gosum",
+        "ruby",
+        "typescript",
+        "javascript",
+        "tsx",
+        "html",
+        "css",
+        "json",
+        "yaml",
+        "dockerfile",
+        "gitcommit",
+        "git_rebase",
+        "gitignore",
+        "diff",
+        "fish",
         -- add more arguments for adding more treesitter parsers
+      },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-space>",
+          node_incremental = "<C-space>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
       },
     },
   },
