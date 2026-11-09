@@ -76,6 +76,9 @@ return {
   },
   -- == Examples of Overriding Plugins ==
   {
+    "terrastruct/d2-vim",
+  },
+  {
     "windwp/nvim-autopairs",
     config = function(plugin, opts)
       require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
@@ -122,18 +125,36 @@ return {
       dashboard = {
         preset = {
           header = table.concat({
-            " █████  ███████ ███████    ██████   ██████ ███    ███",
-            "██   ██      ██      ██    ██   ██ ██      ████  ████",
-            "███████  █████   █████     ██████  ██      ██ ████ ██",
-            "██   ██ ██      ██         ██      ██      ██  ██  ██",
-            "██   ██ ███████ ███████    ██       ██████ ██      ██",
-            " ",
+            " █████╗ ███████╗███████╗",
+            "██╔══██╗╚══███╔╝╚══███╔╝",
+            "███████║  ███╔╝   ███╔╝ ",
+            "██╔══██║ ███╔╝   ███╔╝  ",
+            "██║  ██║███████╗███████╗",
+            "╚═╝  ╚═╝╚══════╝╚══════╝",
+            "",
           }, "\n"),
         },
       },
     },
   },
-
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+      "TmuxNavigatorProcessList",
+    },
+    keys = {
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
     "L3MON4D3/LuaSnip",
